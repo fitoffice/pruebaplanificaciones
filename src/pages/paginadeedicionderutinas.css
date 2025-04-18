@@ -1,0 +1,361 @@
+.routine-editor-container {
+  padding: 20px;
+  background-color: #f0f2f5; /* Light background for the page */
+}
+
+.routine-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px; /* Increased margin */
+  padding: 15px 25px; /* Adjusted padding */
+  background: linear-gradient(90deg, #5a1f9a 0%, #3a54c7 100%); /* Adjusted gradient */
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+}
+
+.routine-header .ant-typography {
+    color: white; /* Ensure title is white */
+}
+
+.routine-header .ant-btn-primary.ant-btn-background-ghost {
+    color: white;
+    border-color: white;
+}
+
+
+.week-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Increased margin */
+    padding: 12px 20px; /* Adjusted padding */
+    background-color: #4a4a9f;
+    color: white;
+    border-radius: 8px;
+  }
+
+.week-selector .week-info {
+  margin: 0 20px;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+}
+
+.week-selector .anticon-calendar {
+    margin-right: 8px;
+}
+
+.week-selector .ant-btn {
+    color: white;
+}
+.week-selector .ant-btn[disabled] {
+    color: rgba(255, 255, 255, 0.5);
+    background-color: transparent;
+    border-color: transparent;
+}
+
+
+.week-tabs {
+  display: flex;
+  gap: 12px; /* Increased gap */
+  margin-bottom: 24px; /* Increased margin */
+  overflow-x: auto;
+  padding-bottom: 10px; /* Increased padding for scrollbar */
+}
+
+.week-tab {
+  min-width: 190px; /* Slightly wider */
+  text-align: center;
+  cursor: pointer;
+  background-color: #7e7ec1;
+  border: 1px solid transparent;
+  color: white;
+  transition: all 0.3s ease; /* Smoother transition */
+  border-radius: 6px; /* Added border-radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+.week-tab .ant-card-body {
+    padding: 12px 15px; /* Adjusted padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+}
+.week-tab .ant-typography {
+    color: white;
+}
+.week-tab .ant-typography-secondary {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9em;
+}
+
+
+.week-tab.active {
+  background-color: #5a5abf; /* Darker shade for active */
+  border-color: #fff; /* White border for active */
+}
+
+.week-tab:hover:not(.active) { /* Hover effect only for non-active tabs */
+    background-color: #6a6ac1;
+    transform: translateY(-1px); /* Slight lift on hover */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.add-week-button {
+  min-width: 160px; /* Adjusted width */
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 12px 15px; /* Match tab padding */
+  border-color: #a0a0d0; /* Lighter border */
+  color: #5a5abf; /* Theme color text */
+  border-radius: 6px; /* Match tab radius */
+  background-color: #f0f2f5; /* Slightly different background */
+  transition: all 0.3s ease;
+}
+.add-week-button:hover {
+    border-color: #5a5abf;
+    background-color: #e6e8ff;
+    color: #4a4a9f;
+}
+.add-week-button .anticon {
+    margin-bottom: 5px;
+}
+
+
+.daily-cards {
+  margin-bottom: 24px; /* Increased margin */
+}
+
+.day-card {
+  border: 1px solid #e8e8e8; /* Lighter border */
+  border-radius: 8px;
+  transition: all 0.3s ease; /* Apply transition to all properties */
+  background-color: #fff; /* Ensure white background */
+}
+.day-card.selected {
+    border-color: #4a4a9f; /* Use theme color for selected border */
+    box-shadow: 0 6px 12px rgba(74, 74, 159, 0.15); /* Enhanced shadow for selected */
+    transform: scale(1.02); /* Slightly scale up selected card */
+}
+
+.day-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: #c0c0e0; /* Lighter theme color on hover */
+}
+
+.day-card .ant-card-body {
+    padding: 15px; /* Increased padding */
+}
+
+.day-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; /* Increased margin */
+  padding-bottom: 8px; /* Add padding below header */
+  border-bottom: 1px solid #f0f0f0; /* Separator line */
+}
+.day-card-header .ant-typography-secondary {
+    font-size: 0.95em; /* Slightly larger date */
+}
+
+.day-card-workout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e9e9ff; /* Lighter purple background */
+    padding: 6px 10px; /* Adjusted padding */
+    border-radius: 4px;
+    margin-top: 8px; /* Add margin top */
+}
+.day-card-workout .ant-typography {
+    color: #4a4a9f; /* Darker text for workout name */
+    font-weight: 500; /* Slightly bolder */
+}
+.day-card .ant-btn-dashed { /* Style the Add Workout button */
+    margin-top: 8px;
+    color: #5a5abf;
+    border-color: #c0c0e0;
+}
+.day-card .ant-btn-dashed:hover {
+    color: #4a4a9f;
+    border-color: #5a5abf;
+}
+
+
+.navigation-tabs {
+  margin-bottom: 24px; /* Increased margin */
+  background-color: #fff; /* White background for the tab row */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.nav-button {
+  text-align: center; /* Center text */
+  background-color: transparent; /* Transparent background */
+  border: none; /* Remove border */
+  color: #595959; /* Default text color */
+  font-weight: 500; /* Medium weight */
+  padding: 10px 0; /* Vertical padding */
+  border-radius: 6px; /* Add radius for hover effect */
+  transition: background-color 0.3s, color 0.3s;
+}
+.nav-button:hover, .nav-button:focus {
+    background-color: #f0f0ff; /* Light purple background on hover/focus */
+    color: #4a4a9f; /* Theme color text on hover/focus */
+}
+/* Add a style for the 'active' nav button if needed */
+/* .nav-button.active {
+    background-color: #e9e9ff;
+    color: #4a4a9f;
+} */
+
+
+.workout-details {
+  background-color: #ffffff;
+  padding: 25px; /* Increased padding */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow */
+}
+
+.routine-header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Increased margin */
+    padding-bottom: 20px; /* Increased padding */
+    border-bottom: 1px solid #f0f0f0;
+}
+.routine-header-controls .ant-typography {
+    margin-bottom: 0;
+    color: #4a4a9f; /* Theme color for title */
+}
+.routine-header-controls .ant-btn-primary { /* Style main action buttons */
+    background-color: #6a11cb;
+    border-color: #6a11cb;
+}
+.routine-header-controls .ant-btn-primary.ant-btn-background-ghost {
+    color: #6a11cb;
+    border-color: #6a11cb;
+}
+.routine-header-controls .ant-btn-primary.ant-btn-background-ghost:hover {
+    color: #fff;
+    background-color: #7b2ccf !important; /* Ensure hover works */
+}
+
+
+.routine-card {
+    border: none; /* Remove border from the main routine card if desired */
+    box-shadow: none;
+}
+.routine-card > .ant-card-body {
+    padding: 0; /* Remove padding if exercise cards handle it */
+}
+
+.routine-title-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Increased gap */
+    margin-bottom: 20px; /* Increased margin */
+    padding: 12px 15px; /* Adjusted padding */
+    background-color: #f8f8ff; /* Very light purple background */
+    border-radius: 6px;
+    border: 1px solid #e8e8ff; /* Light border */
+}
+.routine-title-bar .ant-typography {
+    color: #3a54c7; /* Use secondary theme color */
+    flex-grow: 1; /* Allow title to take available space */
+}
+.routine-title-bar .ant-btn { /* Style edit/copy buttons */
+    color: #5a5abf;
+}
+.routine-title-bar .ant-btn:hover {
+    color: #4a4a9f;
+    background-color: #e9e9ff;
+}
+.routine-title-bar .ant-btn-primary { /* Style Add Exercise button */
+     background-color: #3a54c7;
+     border-color: #3a54c7;
+     margin-left: auto; /* Keep button pushed right */
+}
+
+
+.exercise-card {
+  margin-bottom: 20px; /* Increased margin */
+  border: 1px solid #e8e8e8;
+  border-radius: 6px; /* Added radius */
+  background-color: #fff; /* Ensure white background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04); /* Subtle shadow */
+}
+.exercise-card .ant-card-body {
+    padding: 15px 20px; /* Adjusted padding */
+}
+
+.exercise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px; /* Increased margin */
+  padding-bottom: 10px; /* Add padding */
+  border-bottom: 1px solid #f5f5f5; /* Lighter separator */
+}
+.exercise-header .ant-typography {
+    font-weight: 600; /* Bolder exercise name */
+    color: #333;
+}
+.exercise-header .ant-btn { /* Style up/down/delete buttons */
+    color: #8c8c8c;
+}
+.exercise-header .ant-btn:hover {
+    color: #595959;
+    background-color: #f5f5f5;
+}
+.exercise-header .ant-btn-dangerous:hover {
+    color: #ff4d4f;
+    background-color: #fff1f0;
+}
+
+
+.set-row {
+  margin-bottom: 12px; /* Increased margin */
+  padding: 12px 15px; /* Increased padding */
+  background-color: #fafafa; /* Lighter background for sets */
+  border-radius: 4px;
+  border: 1px solid #f0f0f0; /* Add subtle border */
+  display: flex; /* Use flex for better alignment */
+  align-items: center;
+  gap: 15px; /* Add gap between columns */
+}
+/* Adjust column widths if needed, or let flex handle it */
+.set-row .ant-col {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Gap between label/select and input */
+}
+.set-row .ant-select, .set-row .ant-input-number {
+    flex-grow: 1; /* Allow inputs to grow */
+    min-width: 60px; /* Ensure minimum width */
+}
+.set-row .ant-select-sm .ant-select-selector,
+.set-row .ant-input-number-sm {
+    border-radius: 4px; /* Consistent border radius */
+}
+
+
+.add-set-button {
+  margin-top: 15px; /* Increased margin */
+  width: 100%; /* Make button full width */
+  border-style: dashed;
+  color: #5a5abf;
+  border-color: #c0c0e0;
+}
+.add-set-button:hover {
+    color: #4a4a9f;
+    border-color: #5a5abf;
+    background-color: #f0f0ff;
+}

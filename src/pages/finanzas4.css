@@ -1,0 +1,70 @@
+.finance-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.summary-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.finance-card {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.finance-card.income {
+  background-color: #f6ffed;
+  border-color: #b7eb8f;
+}
+
+.finance-card.expense {
+  background-color: #fff2f0;
+  border-color: #ffccc7;
+}
+
+.finance-card.balance {
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+}
+
+.finance-card h3 {
+  margin: 10px 0;
+}
+
+.finance-card p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.trend {
+  font-size: 14px;
+  color: #666;
+}
+
+.transactions-section {
+  margin-top: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
