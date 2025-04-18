@@ -13,8 +13,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PaginadeEdicionDeRutinas from './pages/paginadeedicionderutinas'; // Ensure the path is correct
 // Assuming the other pages follow a similar naming convention and path
 import PaginadeEdicionDeRutinas2 from './pages/paginadeedicionderutinas2'; // Import the second page
-import PaginaDeEdicionDeRutinas3 from './pages/paginadeedicionderutinas3.tsx'; // or .jsx// Import the third page (assuming name)
-import PaginadeEdicionDeRutinas4 from './pages/paginadeedicionderutinas4.tsx'; // Import the fourth page (assuming name)
+import PaginaDeEdicionDeRutinas3 from './pages/PaginadeEdicionDeRutinas3.jsx'; // or .jsx// Import the third page (assuming name)
+import PaginadeEdicionDeRutinas4 from './pages/PaginadeEdicionDeRutinas4.jsx'; // Import the fourth page (assuming name)
 
 
 // Import Ant Design CSS - needed for PaginadeEdicionDeRutinas
