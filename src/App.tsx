@@ -14,7 +14,7 @@ import PaginadeEdicionDeRutinas from './pages/paginadeedicionderutinas'; // Ensu
 // Assuming the other pages follow a similar naming convention and path
 import PaginadeEdicionDeRutinas2 from './pages/paginadeedicionderutinas2'; // Import the second page
 import PaginaDeEdicionDeRutinas3 from './pages/paginadeedicionderutinas3.tsx'; // or .jsx// Import the third page (assuming name)
-import PaginadeEdicionDeRutinas4 from './pages/paginadeedicionderutinas4'; // Import the fourth page (assuming name)
+import PaginadeEdicionDeRutinas4 from './pages/paginadeedicionderutinas4.tsx'; // Import the fourth page (assuming name)
 
 
 // Import Ant Design CSS - needed for PaginadeEdicionDeRutinas
