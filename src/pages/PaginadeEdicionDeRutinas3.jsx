@@ -28,11 +28,11 @@ const { Option } = Select; // Keep if needed by WorkoutCalendarHeader
 const allWeeksData = [
     {
       id: 0, // Use index as ID for simplicity
-      name: 'Semana 1',
+      name: 'Week 1', // Changed from 'Semana 1'
       dates: '12/04/2025 - 18/04/2025',
       days: [
-        { id: 'w0d1', name: 'Tuesday', date: 14, workout: 'Pecho Week 1' },
-        { id: 'w0d2', name: 'Wednesday', date: 15, workout: 'Pierna Week 1' },
+        { id: 'w0d1', name: 'Tuesday', date: 14, workout: 'Chest Week 1' }, // Changed from 'Pecho Week 1'
+        { id: 'w0d2', name: 'Wednesday', date: 15, workout: 'Leg Week 1' }, // Changed from 'Pierna Week 1'
         { id: 'w0d3', name: 'Thursday', date: 16, workout: null },
         { id: 'w0d4', name: 'Friday', date: 17, workout: null },
         { id: 'w0d5', name: 'Saturday', date: 18, workout: null },
@@ -42,11 +42,11 @@ const allWeeksData = [
     },
     {
       id: 1,
-      name: 'Semana 2',
+      name: 'Week 2', // Changed from 'Semana 2'
       dates: '19/04/2025 - 25/04/2025',
       days: [
         { id: 'w1d1', name: 'Tuesday', date: 21, workout: null },
-        { id: 'w1d2', name: 'Wednesday', date: 22, workout: 'Espalda Week 2' },
+        { id: 'w1d2', name: 'Wednesday', date: 22, workout: 'Back Week 2' }, // Changed from 'Espalda Week 2'
         { id: 'w1d3', name: 'Thursday', date: 23, workout: null },
         { id: 'w1d4', name: 'Friday', date: 24, workout: 'Biceps Week 2' },
         { id: 'w1d5', name: 'Saturday', date: 25, workout: null },
@@ -55,22 +55,22 @@ const allWeeksData = [
       ]
     },
     {
-      id: 2, name: 'Semana 3', dates: '26/04/2025 - 02/05/2025', days: [ /* ... days for week 3 ... */ ]
+      id: 2, name: 'Week 3', dates: '26/04/2025 - 02/05/2025', days: [ /* ... days for week 3 ... */ ] // Changed from 'Semana 3'
     },
     {
-      id: 3, name: 'Semana 4', dates: '03/05/2025 - 09/05/2025', days: [ /* ... days for week 4 ... */ ]
+      id: 3, name: 'Week 4', dates: '03/05/2025 - 09/05/2025', days: [ /* ... days for week 4 ... */ ] // Changed from 'Semana 4'
     },
 ];
 const weeksForHeader = allWeeksData.map(({ id, name, dates }) => ({ id, name, dates }));
 
 // Reintroduce initialRoutineData or fetch dynamically
 const initialRoutineData = {
-  day: 'Lunes', // This might need to be dynamic based on selectedDayId
-  name: 'Rutina de Pecho',
+  day: 'Monday', // Changed from 'Lunes'
+  name: 'Chest Routine', // Changed from 'Rutina de Pecho'
   exercises: [
     {
       id: 1,
-      name: 'Press Inclinado',
+      name: 'Incline Press', // Changed from 'Press Inclinado'
       sets: [
         { id: 1, reps: 12, weight: 20, rest: 23 },
         { id: 2, reps: 12, weight: 10, rest: 60 },
@@ -78,7 +78,7 @@ const initialRoutineData = {
     },
     {
       id: 2,
-      name: 'Press Mancuerna Inclinado',
+      name: 'Incline Dumbbell Press', // Changed from 'Press Mancuerna Inclinado'
       sets: []
     }
   ]
@@ -118,7 +118,7 @@ const PaginadeEdicionDeRutinas3 = () => {
             setCurrentRoutine(prev => ({
                 ...prev, // Keep exercises structure for now, replace if needed
                 day: dayData.name, // Update the day name
-                name: dayData.workout || `Rutina para ${dayData.name}` // Update routine name
+                name: dayData.workout || `Routine for ${dayData.name}` // Changed from `Rutina para ${dayData.name}`
                 // Potentially load exercises specific to this day here
             }));
         } else {

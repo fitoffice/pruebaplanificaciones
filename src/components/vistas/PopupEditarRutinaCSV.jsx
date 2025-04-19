@@ -7,7 +7,8 @@ const SaveIcon = () => <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" 
 
 
 // Renamed component and added routine data prop and update handler prop
-const PopupEditarRutinaCSV = ({ isOpen, onClose, routineData, onUpdateRoutine }) => {
+// Renamed component to match English naming convention
+const PopupEditRoutineCSV = ({ isOpen, onClose, routineData, onUpdateRoutine }) => {
   // Local state to manage edits within the popup
   const [editableRoutine, setEditableRoutine] = useState(null);
 
@@ -52,12 +53,10 @@ const PopupEditarRutinaCSV = ({ isOpen, onClose, routineData, onUpdateRoutine })
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4" // Added padding
+      className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4"
       onClick={handleBackdropClick}
     >
-      {/* Increased max-width, added height constraints and overflow */}
       <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-4xl relative flex flex-col max-h-[85vh]">
-        {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 z-10"
@@ -66,23 +65,21 @@ const PopupEditarRutinaCSV = ({ isOpen, onClose, routineData, onUpdateRoutine })
           <CloseIcon />
         </button>
 
-        {/* Popup Title */}
         <h2 className="text-xl font-semibold mb-4 text-gray-800 border-b pb-2 flex-shrink-0">
-          Editar Rutina: {editableRoutine.name} (Vista CSV)
+          Edit Routine: {editableRoutine.name} (CSV View)
         </h2>
 
-        {/* Scrollable Table Content */}
         <div className="overflow-auto flex-grow mb-4">
           <table className="min-w-full divide-y divide-gray-200 border border-gray-200">
-            <thead className="bg-gray-50 sticky top-0"> {/* Sticky header */}
+            <thead className="bg-gray-50 sticky top-0">
               <tr>
-                <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ejercicio</th>
-                <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Serie</th>
-                <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Repeticiones</th>
-                <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Peso (kg)</th>
-                <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Descanso (seg)</th>
-                {/* Add Notas header if needed */}
-                {/* <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Notas</th> */}
+                <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Exercise</th>
+                <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Set</th>
+                <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Repetitions</th>
+                <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Weight (kg)</th>
+                <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rest (sec)</th>
+                {/* Add Notes header if needed */}
+                {/* <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Notes</th> */}
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
@@ -91,13 +88,13 @@ const PopupEditarRutinaCSV = ({ isOpen, onClose, routineData, onUpdateRoutine })
                   {exercise.sets.length > 0 ? (
                     exercise.sets.map((set, setIndex) => (
                       <tr key={set.id || `set-${exerciseIndex}-${setIndex}`} className="hover:bg-gray-50">
-                        {/* Show exercise name only for the first set */}
                         {setIndex === 0 ? (
                           <td className="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900" rowSpan={exercise.sets.length || 1}>
                             {exercise.name}
                           </td>
                         ) : null}
-                        <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-500">Serie {setIndex + 1}</td>
+                        <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-500">Set {setIndex + 1}</td>
+                        
                         <td className="px-4 py-2 whitespace-nowrap">
                           <input
                             type="number"
@@ -127,10 +124,9 @@ const PopupEditarRutinaCSV = ({ isOpen, onClose, routineData, onUpdateRoutine })
                       </tr>
                     ))
                   ) : (
-                    // Row for exercises with no sets yet
                     <tr key={exercise.id || `ex-${exerciseIndex}-nosets`} className="hover:bg-gray-50">
                        <td className="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900">{exercise.name}</td>
-                       <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-400 italic" colSpan={4}>Sin series añadidas</td>
+                       <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-400 italic" colSpan={4}>No sets added</td>
                     </tr>
                   )}
                 </React.Fragment>
@@ -139,14 +135,13 @@ const PopupEditarRutinaCSV = ({ isOpen, onClose, routineData, onUpdateRoutine })
           </table>
         </div>
 
-        {/* Save Button */}
-        <div className="pt-4 border-t mt-auto flex-shrink-0"> {/* Ensure button stays at bottom */}
+        <div className="pt-4 border-t mt-auto flex-shrink-0">
           <button
             onClick={handleSaveChanges}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-150 ease-in-out flex items-center justify-center space-x-2"
           >
             <SaveIcon />
-            <span>Guardar Cambios</span>
+            <span>Save Changes</span>
           </button>
         </div>
       </div>
@@ -154,4 +149,4 @@ const PopupEditarRutinaCSV = ({ isOpen, onClose, routineData, onUpdateRoutine })
   );
 };
 
-export default PopupEditarRutinaCSV;
+export default PopupEditRoutineCSV;

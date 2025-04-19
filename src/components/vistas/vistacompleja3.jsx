@@ -40,7 +40,7 @@ const VistaCompleja3 = ({ routine, onAddSet, onRoutineUpdate }) => {
 
   if (!routine) {
     // Styled placeholder with Tailwind
-    return <div className="bg-white rounded-lg shadow p-4 text-gray-500">Selecciona un día para ver la rutina.</div>;
+    return <div className="bg-white rounded-lg shadow p-4 text-gray-500">Select a day to view the routine.</div>; // Changed from "Selecciona un día para ver la rutina."
   }
   // Remove handlers for CSV popup
   // const handleOpenEditCsvPopup = () => setIsCsvPopupOpen(true);
@@ -136,21 +136,21 @@ const VistaCompleja3 = ({ routine, onAddSet, onRoutineUpdate }) => {
                 : 'bg-green-600 hover:bg-green-700 text-white' // Style when inactive
             }`}
           >
-            {showCsvEditor ? 'Ocultar CSV' : 'Mostrar CSV'} {/* Change button text based on state */}
+            {showCsvEditor ? 'Hide CSV' : 'Show CSV'} {/* Changed button text */}
           </button>
           {/* Existing "Crear Sesion" button */}
           <button
             onClick={handleOpenCreateSessionPopup} // Use specific handler
             className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-4 rounded-md transition duration-150 ease-in-out"
           >
-            Crear Sesion
+            Create Session {/* Changed from "Crear Sesion" */}
           </button>
           {/* Añadir Rutina Button */}
           <button
             onClick={handleOpenAddRoutinePopup} // Use specific handler
             className="bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 text-sm font-medium py-2 px-4 rounded-md transition duration-150 ease-in-out"
           >
-            + Añadir Rutina
+            + Add Routine {/* Changed from "+ Añadir Rutina" */}
           </button>
         </div>
       </div>
@@ -194,7 +194,7 @@ const VistaCompleja3 = ({ routine, onAddSet, onRoutineUpdate }) => {
                     onClick={handleOpenAddExercisePopup}
                     className="ml-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-1 px-3 rounded-md transition duration-150 ease-in-out flex items-center"
                  >
-                    <PlusIcon /> <span className="ml-1">Añadir Ejercicio</span>
+                    <PlusIcon /> <span className="ml-1">Add Exercise</span> {/* Changed from "Añadir Ejercicio" */}
                  </button>
               </div>
             </div>
@@ -222,11 +222,11 @@ const VistaCompleja3 = ({ routine, onAddSet, onRoutineUpdate }) => {
                    <span className="text-sm font-medium text-gray-600 w-12">Set {index + 1}</span>
                    {/* Reps Input Group */}
                    <div className="flex items-center space-x-2 flex-1 min-w-[180px]">
-                      <label htmlFor={`reps-type-${set.id}`} className="sr-only">Tipo Reps</label>
-                      <select id={`reps-type-${set.id}`} defaultValue="Repeticiones" className="text-xs border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
-                        <option value="Repeticiones">Repeticiones</option>
+                      <label htmlFor={`reps-type-${set.id}`} className="sr-only">Reps Type</label> {/* Changed from "Tipo Reps" */}
+                      <select id={`reps-type-${set.id}`} defaultValue="Repetitions" className="text-xs border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"> {/* Changed default value */}
+                        <option value="Repetitions">Repetitions</option> {/* Changed from "Repeticiones" */}
                       </select>
-                      <label htmlFor={`reps-value-${set.id}`} className="sr-only">Valor Reps</label>
+                      <label htmlFor={`reps-value-${set.id}`} className="sr-only">Reps Value</label> {/* Changed from "Valor Reps" */}
                       <input
                         id={`reps-value-${set.id}`}
                         type="number"
@@ -237,11 +237,11 @@ const VistaCompleja3 = ({ routine, onAddSet, onRoutineUpdate }) => {
                    </div>
                    {/* Weight Input Group */}
                    <div className="flex items-center space-x-2 flex-1 min-w-[150px]">
-                      <label htmlFor={`weight-type-${set.id}`} className="sr-only">Tipo Peso</label>
-                      <select id={`weight-type-${set.id}`} defaultValue="Peso" className="text-xs border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
-                        <option value="Peso">Peso</option>
+                      <label htmlFor={`weight-type-${set.id}`} className="sr-only">Weight Type</label> {/* Changed from "Tipo Peso" */}
+                      <select id={`weight-type-${set.id}`} defaultValue="Weight" className="text-xs border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"> {/* Changed default value */}
+                        <option value="Weight">Weight</option> {/* Changed from "Peso" */}
                       </select>
-                      <label htmlFor={`weight-value-${set.id}`} className="sr-only">Valor Peso</label>
+                      <label htmlFor={`weight-value-${set.id}`} className="sr-only">Weight Value</label> {/* Changed from "Valor Peso" */}
                       <input
                         id={`weight-value-${set.id}`}
                         type="number"
@@ -252,11 +252,11 @@ const VistaCompleja3 = ({ routine, onAddSet, onRoutineUpdate }) => {
                    </div>
                    {/* Rest Input Group */}
                    <div className="flex items-center space-x-2 flex-1 min-w-[160px]">
-                      <label htmlFor={`rest-type-${set.id}`} className="sr-only">Tipo Descanso</label>
-                      <select id={`rest-type-${set.id}`} defaultValue="Descanso" className="text-xs border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
-                        <option value="Descanso">Descanso</option>
+                      <label htmlFor={`rest-type-${set.id}`} className="sr-only">Rest Type</label> {/* Changed from "Tipo Descanso" */}
+                      <select id={`rest-type-${set.id}`} defaultValue="Rest" className="text-xs border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"> {/* Changed default value */}
+                        <option value="Rest">Rest</option> {/* Changed from "Descanso" */}
                       </select>
-                      <label htmlFor={`rest-value-${set.id}`} className="sr-only">Valor Descanso</label>
+                      <label htmlFor={`rest-value-${set.id}`} className="sr-only">Rest Value</label> {/* Changed from "Valor Descanso" */}
                       <input
                         id={`rest-value-${set.id}`}
                         type="number"
@@ -272,26 +272,23 @@ const VistaCompleja3 = ({ routine, onAddSet, onRoutineUpdate }) => {
                 onClick={() => handleAddSet(exercise.id)} // Call handleAddSet with the exercise ID
                 className="mt-2 w-full border-2 border-dashed border-gray-300 hover:border-gray-400 text-gray-500 hover:text-gray-600 text-sm font-medium py-1 px-3 rounded-md transition duration-150 ease-in-out flex items-center justify-center"
               >
-                <PlusIcon /> <span className="ml-1">Añadir Set</span>
+                <PlusIcon /> <span className="ml-1">Add Set</span> {/* Changed from "Añadir Set" */}
               </button>
             </div>
           ))}
         </div>
-      )} {/* End of conditional rendering for main card */}
-
-
-      {/* Conditionally render the non-popup CSV editor component */}
-      {showCsvEditor && ( // Render only if showCsvEditor is true
-        <div className="mt-6"> {/* Add some margin for separation */}
-          <PopupEditarRutinaCSV2
-            routineData={routine} // Pass the current routine data
-            onUpdateRoutine={handleUpdateRoutineFromCsvComponent} // Pass the handler function
-          />
-        </div>
       )}
 
+      {/* Conditionally render the CSV Editor Component */}
+      { showCsvEditor && (
+        <PopupEditarRutinaCSV2
+          routineData={routine} // Pass the current routine data
+          onUpdate={handleUpdateRoutineFromCsvComponent} // Pass the update handler
+          onClose={toggleCsvEditor} // Pass the toggle handler to allow closing from within the component
+        />
+      )}
 
-      {/* Render other Popups (Always available, visibility controlled by their own state) */}
+      {/* Popups (remain unchanged) */}
       <PopupCrearSesion isOpen={isCreateSessionPopupOpen} onClose={handleCloseCreateSessionPopup} />
       <PopupAnadirRutina isOpen={isAddRoutinePopupOpen} onClose={handleCloseAddRoutinePopup} />
       <PopupAnadirEjercicio
@@ -299,11 +296,8 @@ const VistaCompleja3 = ({ routine, onAddSet, onRoutineUpdate }) => {
         onClose={handleCloseAddExercisePopup}
         routineName={currentRoutineName} // Pass potentially updated name
       />
-      {/* Removed the rendering of PopupEditarRutinaCSV */}
-      {/* <PopupEditarRutinaCSV ... /> */}
     </div>
   );
 };
 
-// Changed default export to VistaCompleja3
 export default VistaCompleja3;

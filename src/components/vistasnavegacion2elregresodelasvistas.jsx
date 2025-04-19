@@ -22,20 +22,20 @@ const VistasNavegacion2ElRegresoDeLasVistas = ({ onSelectView }) => {
   // Data structure for the views with unique keys for subViews
   const views = [
     {
-      title: "Vistas Principales",
+      title: "Main Views", // Changed from "Vistas Principales"
       icon: <GridIcon className="w-4 h-4 mr-2 text-indigo-600" />,
       bgColor: "bg-indigo-500", // Purple tone
       hoverBgColor: "hover:bg-indigo-600",
       textColor: "text-white",
       subViews: [
         // Add the 'key' property matching the component names
-        { key: "VistaSimple", text: "Simplificada", icon: <ListIcon className="w-4 h-4" /> },
-        { key: "VistaCompleja", text: "Compleja", icon: <GridIcon className="w-4 h-4" /> },
+        { key: "VistaSimple", text: "Simplified", icon: <ListIcon className="w-4 h-4" /> }, // Changed from "Simplificada"
+        { key: "VistaCompleja", text: "Complex", icon: <GridIcon className="w-4 h-4" /> }, // Changed from "Compleja"
         { key: "VistaExcel", text: "Excel", icon: <GridIcon className="w-4 h-4" /> },
       ]
     },
     {
-      title: "Análisis y Seguimiento",
+      title: "Analysis and Tracking", // Changed from "Análisis y Seguimiento"
       icon: <ChartIcon className="w-4 h-4 mr-2 text-teal-600" />,
       bgColor: "bg-teal-500", // Teal tone
       hoverBgColor: "hover:bg-teal-600",
@@ -44,12 +44,12 @@ const VistasNavegacion2ElRegresoDeLasVistas = ({ onSelectView }) => {
         // Add the 'key' property matching the component names
         // Add the 'key' property matching the component names
         // { key: "VistaEjercicios", text: "Ejercicios", icon: <DumbbellIcon className="w-4 h-4" /> }, // Removed this line
-        { key: "VistaRutinas", text: "Rutinas", icon: <ClipboardListIcon className="w-4 h-4" /> },
+        { key: "VistaRutinas", text: "Routines", icon: <ClipboardListIcon className="w-4 h-4" /> }, // Changed from "Rutinas"
         { key: "VistaFormulas", text: "Formulas", icon: <CalculatorIcon className="w-4 h-4" /> },
       ]
     },
     {
-      title: "Gestión y Recursos",
+      title: "Management and Resources", // Changed from "Gestión y Recursos"
       icon: <DocIcon className="w-4 h-4 mr-2 text-cyan-600" />,
       bgColor: "bg-cyan-500", // Cyan/Teal tone
       hoverBgColor: "hover:bg-cyan-600",
@@ -57,7 +57,7 @@ const VistasNavegacion2ElRegresoDeLasVistas = ({ onSelectView }) => {
       subViews: [
         // Add the 'key' property matching the component names
         { key: "VistaRMS", text: "RMS", icon: <ChartIcon className="w-4 h-4" /> },
-        { key: "VistaNotas", text: "Notas", icon: <NoteIcon className="w-4 h-4" /> },
+        { key: "VistaNotas", text: "Notes", icon: <NoteIcon className="w-4 h-4" /> }, // Changed from "Notas"
         // { key: "VistaResumen", text: "Resumen", icon: <SummaryIcon className="w-4 h-4" /> }, // Removed this line
       ]
     }

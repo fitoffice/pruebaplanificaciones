@@ -34,55 +34,51 @@ const WorkoutCalendarHeader = ({
   return (
     <> {/* Use Fragment to return multiple root elements */}
       {/* Header - Adjusted background, button colors and styles */}
-      <div className="flex justify-between items-center mb-4 p-3 px-5 bg-white shadow"> {/* Changed background to white, reduced bottom margin */}
+      <div className="flex justify-between items-center mb-4 p-3 px-5 bg-white shadow">
         <button className="flex items-center px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded text-sm font-medium transition-colors">
-          <BackIcon /> Volver
+          <BackIcon /> Back
         </button>
-        <h3 className="text-lg font-bold m-0 text-gray-800">Planificacion Fuerza Pablo</h3> {/* Made text bold */}
-        <div className="flex items-center space-x-2"> {/* Reduced space */}
-          <button className="flex items-center px-3 py-1.5 border border-green-500 text-green-600 bg-white hover:bg-green-50 rounded transition-colors text-sm font-medium"> {/* Green ghost button */}
-            <TourIcon /> Iniciar Tour
+        <h3 className="text-lg font-bold m-0 text-gray-800">Pablo's Strength Planning</h3>
+        <div className="flex items-center space-x-2">
+          <button className="flex items-center px-3 py-1.5 border border-green-500 text-green-600 bg-white hover:bg-green-50 rounded transition-colors text-sm font-medium">
+            <TourIcon /> Start Tour
           </button>
-          <button className="flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors text-sm font-medium"> {/* Blue button */}
-            <ConfigIcon /> Configuración
+          <button className="flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors text-sm font-medium">
+            <ConfigIcon /> Settings
           </button>
         </div>
       </div>
 
       {/* Week Selector - Adjusted background, button styles */}
-      <div className="mb-4 bg-indigo-600 text-white rounded-lg p-3"> {/* Added padding to the container */}
+      <div className="mb-4 bg-indigo-600 text-white rounded-lg p-3">
         {/* Week Selector Bar - Centered */}
-        <div className="flex items-center justify-center relative mb-3"> {/* Centered content, relative for potential absolute positioning of arrows if needed, added bottom margin */}
+        <div className="flex items-center justify-center relative mb-3">
           <button
             onClick={() => handleWeekChange('prev')}
             disabled={currentWeek === 0}
-            // Position arrows absolutely if needed, or keep inline with justify-center
-            // Using justify-center keeps them closer to the text
-            className="p-2 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full disabled:opacity-40 disabled:cursor-not-allowed transition-colors mx-4" // Added horizontal margin
+            className="p-2 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full disabled:opacity-40 disabled:cursor-not-allowed transition-colors mx-4"
           >
             <LeftArrowIcon />
           </button>
           {/* Central Text */}
           <div className="text-base flex items-center font-semibold">
             <CalendarIcon />
-            <span>Semana {currentWeek + 1} de {weeks.length}</span>
+            <span>Week {currentWeek + 1} of {weeks.length}</span>
           </div>
           <button
             onClick={() => handleWeekChange('next')}
             disabled={currentWeek === weeks.length - 1}
-            // Position arrows absolutely if needed, or keep inline with justify-center
-            className="p-2 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full disabled:opacity-40 disabled:cursor-not-allowed transition-colors mx-4" // Added horizontal margin
+            className="p-2 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full disabled:opacity-40 disabled:cursor-not-allowed transition-colors mx-4"
           >
             <RightArrowIcon />
           </button>
         </div>
 
         {/* Week Tabs - Now inside the same container, removed margin-bottom */}
-        <div className="flex space-x-3 overflow-x-auto pb-1"> {/* Reduced bottom padding/margin */}
+        <div className="flex space-x-3 overflow-x-auto pb-1">
           {weeks.map((week, index) => (
             <div
               key={week.id}
-              // Styles remain the same as previous step
               className={`flex-shrink-0 w-44 p-3 text-center cursor-pointer rounded-lg bg-indigo-500 hover:bg-indigo-600 transition-colors duration-200 ease-in-out`}
               onClick={() => setCurrentWeek(index)}
             >
@@ -90,24 +86,21 @@ const WorkoutCalendarHeader = ({
               <span className={`block text-xs mt-0.5 text-indigo-100`}>{week.dates}</span>
             </div>
           ))}
-          {/* Styles remain the same as previous step */}
           <button className="flex-shrink-0 w-40 flex flex-col items-center justify-center p-3 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors">
             <PlusIcon />
-            <span className="text-sm font-medium mt-1">Añadir Semana</span>
+            <span className="text-sm font-medium mt-1">Add Week</span>
           </button>
         </div>
-      </div> {/* End of combined container */}
-
-
+      </div>
+      
       {/* Daily Workout Cards - Now selectable and uses selectedDayId prop */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 mb-6">
         {days.map(day => (
           <div
             key={day.id}
-            // Add onClick handler and update className logic
-            onClick={() => handleSelectDay(day.id)} // Call handler on click
+            onClick={() => handleSelectDay(day.id)}
             className={`border rounded-lg bg-white shadow-sm transition-all duration-200 ease-in-out cursor-pointer
-                        ${day.id === selectedDayId // Compare day.id with selectedDayId prop
+                        ${day.id === selectedDayId
                           ? 'border-2 border-black shadow-md'
                           : 'border-gray-300 hover:shadow-md hover:border-gray-400'}`}
           >
